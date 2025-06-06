@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <!-- Sol (mais detalhado com gradiente e raios) -->
+    <defs>
+        <radialGradient id="solGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+            <stop offset="0%" style="stop-color:#FFA500"/>
+            <stop offset="100%" style="stop-color:#F97316"/>
+        </radialGradient>
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+            <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+    
+    <!-- Raios do sol -->
+    <g transform="translate(100, 70)">
+        <circle cx="0" cy="0" r="25" fill="url(#solGradient)" filter="url(#glow)"/>
+        <!-- Raios -->
+        <g stroke="#F97316" stroke-width="4" stroke-linecap="round">
+            <line x1="-35" y1="0" x2="-28" y2="0" transform="rotate(0)"/>
+            <line x1="-35" y1="0" x2="-28" y2="0" transform="rotate(45)"/>
+            <line x1="-35" y1="0" x2="-28" y2="0" transform="rotate(90)"/>
+            <line x1="-35" y1="0" x2="-28" y2="0" transform="rotate(135)"/>
+            <line x1="-35" y1="0" x2="-28" y2="0" transform="rotate(180)"/>
+            <line x1="-35" y1="0" x2="-28" y2="0" transform="rotate(225)"/>
+            <line x1="-35" y1="0" x2="-28" y2="0" transform="rotate(270)"/>
+            <line x1="-35" y1="0" x2="-28" y2="0" transform="rotate(315)"/>
+        </g>
+    </g>
+
+    <!-- Campo (mais detalhado com múltiplas curvas) -->
+    <g transform="translate(0, 100)">
+        <!-- Primeira camada de ondulações (mais escura) -->
+        <path d="M30 0 Q100 -20 170 0 Q100 -10 30 10 Q100 0 170 20" 
+              fill="none" 
+              stroke="#15803D" 
+              stroke-width="8" 
+              stroke-linecap="round"/>
+        
+        <!-- Segunda camada de ondulações (mais clara) -->
+        <path d="M30 15 Q100 -5 170 15 Q100 5 30 25 Q100 15 170 35" 
+              fill="none" 
+              stroke="#16A34A" 
+              stroke-width="6" 
+              stroke-linecap="round"/>
+        
+        <!-- Terceira camada de ondulações (mais clara ainda) -->
+        <path d="M30 30 Q100 10 170 30 Q100 20 30 40 Q100 30 170 50" 
+              fill="none" 
+              stroke="#22C55E" 
+              stroke-width="4" 
+              stroke-linecap="round"/>
+    </g>
+</svg> 

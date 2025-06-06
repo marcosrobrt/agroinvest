@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="fieldGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#fbbf24"/>
+            <stop offset="100%" style="stop-color:#d97706"/>
+        </linearGradient>
+    </defs>
+    
+    <!-- Céu -->
+    <rect x="0" y="0" width="800" height="300" fill="#0ea5e9"/>
+    
+    <!-- Campo de soja -->
+    <path d="M0 200 L800 200 L800 600 L0 600 Z" fill="url(#fieldGradient)"/>
+    
+    <!-- Plantas de soja (silhuetas) -->
+    <g fill="#115e59">
+        <path d="M100 300 Q150 250 200 300 L150 500 Z"/>
+        <path d="M300 300 Q350 250 400 300 L350 500 Z"/>
+        <path d="M500 300 Q550 250 600 300 L550 500 Z"/>
+        <path d="M700 300 Q750 250 800 300 L750 500 Z"/>
+    </g>
+</svg> 

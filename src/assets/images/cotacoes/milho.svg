@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="cornGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#fbbf24"/>
+            <stop offset="100%" style="stop-color:#b45309"/>
+        </linearGradient>
+    </defs>
+    
+    <!-- Céu -->
+    <rect x="0" y="0" width="800" height="300" fill="#0ea5e9"/>
+    
+    <!-- Campo -->
+    <path d="M0 200 L800 200 L800 600 L0 600 Z" fill="#15803d"/>
+    
+    <!-- Plantas de milho (silhuetas) -->
+    <g fill="#166534">
+        <path d="M200 150 Q300 50 400 150 L350 500 L250 500 Z"/>
+        <path d="M500 150 Q600 50 700 150 L650 500 L550 500 Z"/>
+    </g>
+    
+    <!-- Espigas -->
+    <g fill="url(#cornGradient)">
+        <ellipse cx="300" cy="350" rx="30" ry="80"/>
+        <ellipse cx="600" cy="350" rx="30" ry="80"/>
+    </g>
+</svg> 

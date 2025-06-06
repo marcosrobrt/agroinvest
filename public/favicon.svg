@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+    <!-- Definições de gradientes e filtros -->
+    <defs>
+        <radialGradient id="solGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+            <stop offset="0%" style="stop-color:#FFA500"/>
+            <stop offset="100%" style="stop-color:#F97316"/>
+        </radialGradient>
+    </defs>
+    
+    <!-- Sol simplificado mas mantendo qualidade -->
+    <g transform="translate(16, 11) scale(0.16)">
+        <circle cx="0" cy="0" r="25" fill="url(#solGradient)"/>
+        <!-- Raios principais apenas -->
+        <g stroke="#F97316" stroke-width="4" stroke-linecap="round">
+            <line x1="-35" y1="0" x2="-28" y2="0" transform="rotate(0)"/>
+            <line x1="-35" y1="0" x2="-28" y2="0" transform="rotate(90)"/>
+            <line x1="-35" y1="0" x2="-28" y2="0" transform="rotate(180)"/>
+            <line x1="-35" y1="0" x2="-28" y2="0" transform="rotate(270)"/>
+        </g>
+    </g>
+
+    <!-- Campo simplificado mas mantendo a essência -->
+    <g transform="translate(0, 16) scale(0.16)">
+        <path d="M30 0 Q100 -20 170 0 Q100 -10 30 10 Q100 0 170 20" 
+              fill="none" 
+              stroke="#15803D" 
+              stroke-width="8" 
+              stroke-linecap="round"/>
+        <path d="M30 15 Q100 -5 170 15 Q100 5 30 25 Q100 15 170 35" 
+              fill="none" 
+              stroke="#16A34A" 
+              stroke-width="6" 
+              stroke-linecap="round"/>
+    </g>
+</svg> 
