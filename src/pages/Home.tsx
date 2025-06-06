@@ -12,7 +12,7 @@ export default function Home() {
               Seu Parceiro em Crédito e Assessoria Rural
             </h1>
             <p className="text-xl mb-8">
-              Soluções financeiras e consultoria especializada para o agronegócio em Rondônia
+              Soluções financeiras e consultoria especializada para o agronegócio em Buritis - RO
             </p>
             <Link
               to="/contato"
