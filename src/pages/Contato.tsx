@@ -1,9 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+interface Contact {
+  name: string;
+  number: string;
+}
 
 export default function Contato() {
-  const whatsappNumber = '69912345678'; // Replace with actual WhatsApp number
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  
+  const contacts: Contact[] = [
+    { name: 'Diego', number: '69993737919' },
+    { name: 'Marcos', number: '69993521220' }
+  ];
+
   const whatsappMessage = 'Olá! Gostaria de saber mais sobre os serviços da AGROINVEST.';
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+  
+  const openWhatsApp = (contact: Contact) => {
+    const whatsappUrl = `https://wa.me/${contact.number}?text=${encodeURIComponent(whatsappMessage)}`;
+    window.open(whatsappUrl, '_blank');
+    setIsModalOpen(false);
+  };
 
   return (
     <div className="py-8">
@@ -13,19 +29,18 @@ export default function Contato() {
           
           <div className="card mb-8">
             <h2 className="text-xl font-semibold mb-4">Nosso Escritório</h2>
-            <p className="text-gray-600 mb-2">Rua Principal, 123</p>
-            <p className="text-gray-600 mb-2">Centro, Buritis - RO</p>
-            <p className="text-gray-600 mb-4">CEP: 76880-000</p>
+            <p className="text-gray-600 mb-2">Rua Foz do Iguaçu, 1800, Sala-A</p>
+            <p className="text-gray-600 mb-4">Buritis - RO</p>
             
             <h3 className="text-lg font-semibold mb-2">Horário de Atendimento</h3>
             <p className="text-gray-600 mb-4">Segunda a Sexta: 8h às 18h</p>
             
             <h3 className="text-lg font-semibold mb-2">Contatos</h3>
             <p className="text-gray-600 mb-2">
-              WhatsApp: (69) 91234-5678
+              WhatsApp Diego: (69) 99373-7919
             </p>
-            <p className="text-gray-600">
-              Email: contato@agroinvest.com.br
+            <p className="text-gray-600 mb-2">
+              WhatsApp Marcos: (69) 99352-1220
             </p>
           </div>
 
@@ -34,10 +49,8 @@ export default function Contato() {
             <p className="text-gray-600 mb-6">
               Clique no botão abaixo para iniciar uma conversa com nossa equipe
             </p>
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => setIsModalOpen(true)}
               className="inline-flex items-center justify-center bg-green-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors"
             >
               <svg
@@ -51,8 +64,42 @@ export default function Contato() {
                 />
               </svg>
               Iniciar Conversa
-            </a>
+            </button>
           </div>
+
+          {/* Modal de seleção de contato */}
+          {isModalOpen && (
+            <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+              <div className="bg-white p-6 rounded-lg shadow-xl max-w-md w-full">
+                <h3 className="text-xl font-semibold mb-4">Escolha um contato</h3>
+                <div className="space-y-3">
+                  {contacts.map((contact) => (
+                    <button
+                      key={contact.number}
+                      onClick={() => openWhatsApp(contact)}
+                      className="w-full text-left p-3 rounded-lg hover:bg-gray-100 transition-colors flex items-center"
+                    >
+                      <svg
+                        className="w-6 h-6 mr-3 text-green-500"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                      </svg>
+                      Falar com {contact.name}
+                    </button>
+                  ))}
+                </div>
+                <button
+                  onClick={() => setIsModalOpen(false)}
+                  className="mt-4 w-full bg-gray-100 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors"
+                >
+                  Cancelar
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
