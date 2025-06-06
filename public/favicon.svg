@@ -1,36 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-    <!-- Definições de gradientes e filtros -->
-    <defs>
-        <radialGradient id="solGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-            <stop offset="0%" style="stop-color:#FFA500"/>
-            <stop offset="100%" style="stop-color:#F97316"/>
-        </radialGradient>
-    </defs>
-    
-    <!-- Sol simplificado mas mantendo qualidade -->
-    <g transform="translate(16, 11) scale(0.16)">
-        <circle cx="0" cy="0" r="25" fill="url(#solGradient)"/>
-        <!-- Raios principais apenas -->
-        <g stroke="#F97316" stroke-width="4" stroke-linecap="round">
-            <line x1="-35" y1="0" x2="-28" y2="0" transform="rotate(0)"/>
-            <line x1="-35" y1="0" x2="-28" y2="0" transform="rotate(90)"/>
-            <line x1="-35" y1="0" x2="-28" y2="0" transform="rotate(180)"/>
-            <line x1="-35" y1="0" x2="-28" y2="0" transform="rotate(270)"/>
-        </g>
-    </g>
-
-    <!-- Campo simplificado mas mantendo a essência -->
-    <g transform="translate(0, 16) scale(0.16)">
-        <path d="M30 0 Q100 -20 170 0 Q100 -10 30 10 Q100 0 170 20" 
-              fill="none" 
-              stroke="#15803D" 
-              stroke-width="8" 
-              stroke-linecap="round"/>
-        <path d="M30 15 Q100 -5 170 15 Q100 5 30 25 Q100 15 170 35" 
-              fill="none" 
-              stroke="#16A34A" 
-              stroke-width="6" 
-              stroke-linecap="round"/>
-    </g>
+<svg width="32" height="32" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sol -->
+  <g transform="translate(100, 100)">
+    <!-- Raios do sol -->
+    <path d="M0,-60 L0,-80 M40,-40 L55,-55 M60,0 L80,0 M40,40 L55,55 M0,60 L0,80 M-40,40 L-55,55 M-60,0 L-80,0 M-40,-40 L-55,-55" 
+          stroke="#FF8C00" 
+          stroke-width="12" 
+          stroke-linecap="round"/>
+    <!-- Círculo central do sol -->
+    <circle cx="0" cy="0" r="30" fill="#FF8C00"/>
+  </g>
+  
+  <!-- Campos/Colinas -->
+  <path d="M20,140 C60,120 100,140 140,120 C180,100 200,120 200,120 L200,200 L0,200 L0,120 C0,120 20,140 60,120" 
+        fill="#4CAF50"/>
 </svg> 
