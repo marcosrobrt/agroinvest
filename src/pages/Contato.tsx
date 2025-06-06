@@ -9,8 +9,8 @@ export default function Contato() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   
   const contacts: Contact[] = [
-    { name: 'Diego', number: '69993737919' },
-    { name: 'Marcos', number: '69993521220' }
+    { name: 'Diego', number: '5569993737919' },
+    { name: 'Marcos', number: '5569993521220' }
   ];
 
   const whatsappMessage = 'Olá! Gostaria de saber mais sobre os serviços da AGROINVEST.';
@@ -37,10 +37,10 @@ export default function Contato() {
             
             <h3 className="text-lg font-semibold mb-2">Contatos</h3>
             <p className="text-gray-600 mb-2">
-              WhatsApp Diego: (69) 99373-7919
+              WhatsApp Diego: +55 (69) 99373-7919
             </p>
             <p className="text-gray-600 mb-2">
-              WhatsApp Marcos: (69) 99352-1220
+              WhatsApp Marcos: +55 (69) 99352-1220
             </p>
           </div>
 
